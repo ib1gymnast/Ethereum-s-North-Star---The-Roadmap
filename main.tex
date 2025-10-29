@@ -23,9 +23,12 @@
 \usepackage{xcolor}
 \usepackage[enable]{darkmode}
 
-
+\definecolor{mutedmagenta}{RGB}{178, 96, 170}
 \definecolor{hardpurple}{RGB}{139, 108, 158}
 \definecolor{softpurple}{RGB}{179, 153, 201}
+\definecolor{lightpurple1}{RGB}{205, 188, 219}
+\definecolor{lightpurple2}{RGB}{218, 204, 228}
+\definecolor{lightpurple3}{RGB}{230, 221, 237}
 
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
@@ -55,9 +58,8 @@
 
 \usepackage[
     colorlinks=true,
-    linkcolor=softpurple,  % Internal links (e.g., \ref, sections)
-    citecolor=softpurple,  % Citations (if you want them to match internals)
-    filecolor=magenta,
+    citecolor=mutedmagenta,  % Citations (if you want them to match internals)
+    filecolor=mutedmagenta,
     urlcolor=cyan,         % External URLs
     pdftitle={The Ethereum Roadmap},
     pdfpagemode=FullScreen,
@@ -70,7 +72,8 @@
 %\hypersetup{linkcolor=black}
 \hypersetup{linkcolor=white}
 \tableofcontents
-\hypersetup{linkcolor=hardpurple}  % Restore internal link color here
+\hypersetup{linkcolor=softpurple}  % Restore internal link color here
+%\hypersetup{linkcolor=mutedmagenta}
 
 \section{Introduction}
 \label{Intro}
@@ -83,7 +86,7 @@ This will serve as a follow-on to that paper. What has happened in the last four
 
 This will serve as a lightning round on Ethereum's roadmap, aiming to achieve a high level conceptual understanding, with links to further reading. The goal here is to get you up to speed on the current state of Ethereum's roadmap as time-efficiently as possible and to direct you to high quality resources where you can dig deeper if desired. This is aimed at people who are interested in Ethereum, already understand some background on Ethereum, but want to deep dive on the technical roadmap. \textit{I believe that understanding your investments from a first principles perspective is key to having conviction in your long term holds through insane volatility.}
 
-I would like to encourage you to take an active approach to learning as you read this - read a section, then feed that section into your favorite Large Language Model and ask questions about the topic so that this can become an engaging and active learning experience. You will learn more and retain it for longer, and this paper can serve as a way to focus the LLM to make its output more directed and valuable. If you want to feed in the raw LaTeX for this paper, it can be found here: (LINK) External links are in \href{https://www.google.com/}{cyan}, links to other parts internal to this pdf are in \hyperref[Intro]{purple}. There is both a light and a dark version of this article, pick your preference. 
+I would like to encourage you to take an active approach to learning as you read this - read a section, then feed that section into your favorite Large Language Model and ask questions about the topic so that this can become an engaging and active learning experience. You will learn more and retain it for longer, and this paper can serve as a way to focus the LLM to make its output more directed and valuable. If you want to feed in the raw LaTeX for this paper, it can be found \href{https://drive.google.com/file/d/1PmTZO5kiDBulgZjDLLtBkzJLPaIL5zzq/view?usp=sharing}{here}. External links are in \href{https://www.google.com/}{cyan}, links to other parts internal to this pdf are in \hyperref[Intro]{purple}. There is both a light and a dark version of this article, pick your preference. Here is a link to the \href{https://drive.google.com/file/d/1xQsr920hG91oHFWmu7kI0iYASWpyCX8a/view?usp=sharing}{light version}. 
 
 Ethereum's roadmap is what makes it the most likely to achieve the holy grail of becoming the internet's settlement layer - Ethereum's North Star - both an extremely powerful public good for humanity, and ultimately what would make Ethereum one of the most valuable assets in the world.   
 
@@ -510,7 +513,7 @@ To achieve Stage 2, a Rollup must:
     \item \textbf{State validation:} If a faulty transaction was executed by the L2, anyone must be able to permissionlessly submit a fraud proof that a transaction executed by the L2 was faulty in order to revert the faulty transaction
     \item \textbf{Data Availability:} The rollup's transaction data must be posted on Ethereum L1 such that it is available for fraud proof construction
     \item \textbf{Self propose:} Anyone can permissionlessly become a block proposer to the L2 after a time period of inactivity from the whitelisted block proposers
-    \item \textbf{Exit Window:} There must be a long enough delay between when  an upgrade to the rollup is proposed and when the upgrade is implemented for users to exit back to the L1 permissionlessly. This way, if the upgrade is malicious, users have enough time to permissionlessly exit the rollup to avoid the malicious upgrade. This is generally accepted to be 30 days. As of October 2025, there is one general-purpose rollup with an upgrade delay of at least 30 days: \href{https://l2beat.com/scaling/projects/facet}{Facet Bluebird}.
+    \item \textbf{Exit Window:} There must be a long enough delay between when  an upgrade to the rollup is proposed and when the upgrade is implemented for users to exit back to the L1 permissionlessly. This way, if the upgrade is malicious, users have enough time to permissionlessly exit the rollup to avoid the malicious upgrade. This is generally accepted to be 30 days. As of October 2025, there is one general-purpose rollup with an upgrade delay of at least 30 days: \href{https://l2beat.com/scaling/projects/facet}{Facet Bluebird}. 
 \end{itemize}
 
 \begin{figure}[h]
