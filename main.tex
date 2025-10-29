@@ -18,7 +18,6 @@
 \usepackage{animate}
 \usepackage{tikz}
 \usepackage{enumitem}
-\usepackage{mdframed}
 \usepackage[framemethod=tikz]{mdframed}  % Use tikz for transparency support
 \usepackage{comment}
 \usepackage{xcolor}
@@ -160,17 +159,17 @@ Over the last four years, we have seen many new applications built on Ethereum; 
 
 \begin{wrapfigure}{r}{0.45\textwidth}
    \includegraphics[width=0.45\textwidth]{SER.png}
-   \caption*{\href{https://www.strategicethreserve.xyz/}{SΞR}}
+   \caption*{\textit{The Strategic ETH Reserve - \href{https://www.strategicethreserve.xyz/}{SΞR}}}
 \end{wrapfigure}
 
 Starting mid-summer 2025, a handful of publicly listed companies, collectively referred to as Digital Asset Treasury companies (DATs), began the Microstrategy playbook of acquiring Ethereum (rather than Bitcoin, as in Microstrategy's case) and have collectively acquired more than 6 Million Ether. This has solidified Ethereum as a store of value reserve asset, with the added utility that comes along with access to the Ethereum ecosystem, such as yield on staked ETH as well as access to Decentralized Finance protocols, something that Bitcoin cannot offer. These DATs are likely to have an outsized impact on demand for Ether; \href{https://x.com/SharpLinkGaming}{SBET}, with one of the Ethereum co-founders Joe Lubin as its chairman, \href{https://www.sec.gov/Archives/edgar/data/1981535/000164117225020052/form424b5.htm}{intends to acquire} \$5B Ether via at-the-market sales of their stock. Tom Lee from Fundstrat has \href{https://x.com/bitmnr/status/1945857172237393982?s=46&t=e2mii_RCNljiYtI33xapDQ}{a stated goal} of acquiring 5\% (!) of the total supply of Ether - \textit{and is more than half way to his goal!} 
-
-The website \href{https://www.strategicethreserve.xyz/}{Strategic Ethereum Reserve (SΞR)} is a beautiful dashboard for tracking changes in holdings of these companies, as well as other major institutions in the Ethereum community and ETFs that hold Ether. 
 
 \begin{wrapfigure}{r}{0.4\textwidth}
    \includegraphics[width=0.4\textwidth]{supply ratio.png}
    \caption*{\textit{5 times as much ETH has been acquired in a DAT, an ETF, or been burnt by tx fees, than has been issued by the network since September of 2022.}}
 \end{wrapfigure}
+
+The website \href{https://www.strategicethreserve.xyz/}{Strategic Ethereum Reserve (SΞR)} is a beautiful dashboard for tracking changes in holdings of these companies, as well as other major institutions in the Ethereum community and ETFs that hold Ether. 
 
 One of the coolest aspects about this website is that it tracks daily purchase demand for ETH as a ratio of daily issuance for ETH. On this particular day of writing, approximately 64x as much Ether was purchased as was issued by the network. If this keeps up, it will have a material impact on the price of ETH. 
 
@@ -184,7 +183,7 @@ Ethereum eliminated almost all of its token issuance from Proof of Work (and was
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{eth issuance.png}
+    \includegraphics[width=0.75\linewidth]{eth issuance.png}
     \caption{\textit{Since Ethereum moved to PoS, Bitcoin's issuance has far outstripped ETH's issuance over the last four years, image from \href{https://ultrasound.money/}{Ultrasound.money}}}
 \end{figure}
 
@@ -196,12 +195,12 @@ In April of 2023, Ethereum enabled staking withdrawals, which derisked the full 
 
 Let's first briefly introduce how the Ethereum community arrives at consensus on which network upgrades to implement (or not implement), before we talk in depth about the roadmap itself. The Ethereum governance process can be messy - no one person or entity is in charge of the process of making decisions - and it is a commonly misunderstood process. This is a brief overview of my understanding of the process, but it does not necessarily happen exactly how I describe below with every upgrade - this is a generalization of the process. 
 
-Network upgrades are generally quite involved, so it makes sense to batch groups of EIPs together under a larger network upgrade; these network upgrades have recently been coming out at a cadence of approximately once per year. The naming convention for Ethereum upgrades is a portmanteau of the individual upgrade names for both the Execution Layer and the Consensus Layer. As an example, the currently in progress network upgrade targeted for Q4 2025 is ``Fusaka", a concatenation of ``Fulu" and ``Osaka". Changes to the Execution Layer (EL) have historically been named after cities that have hosted Devcon events, and changes to the Consensus Layer (CL) have historically been named after celestial bodies. 
-
 \begin{wrapfigure}{r}{0.45\textwidth}
    \includegraphics[width=0.45\textwidth]{EIP.png}
    \caption*{\textit{Check out \href{https://x.com/sleety_eth}{Sleety}'s animated \href{https://x.com/tokenmotion_io/status/1851737573300797568}{thread} on the EIP process}}
 \end{wrapfigure}
+
+Network upgrades are generally quite involved, so it makes sense to batch groups of EIPs together under a larger network upgrade; these network upgrades have recently been coming out at a cadence of approximately once per year. The naming convention for Ethereum upgrades is a portmanteau of the individual upgrade names for both the Execution Layer and the Consensus Layer. As an example, the currently in progress network upgrade targeted for Q4 2025 is ``Fusaka", a concatenation of ``Fulu" and ``Osaka". Changes to the Execution Layer (EL) have historically been named after cities that have hosted Devcon events, and changes to the Consensus Layer (CL) have historically been named after celestial bodies. 
 
 At a high level, the Ethereum roadmap has many parallel technological upgrades that are all being worked on simultaneously by many different people. The roadmap is split up into focusing on each of Ethereum's three different layers, and the most impactful of these upgrades will be the focus of the rest of this article. 
 
@@ -242,8 +241,6 @@ Around Ethereum's 10th Birthday, Justin Drake published a blog post titled \href
         \item \textbf{Data Layer} - the layer responsible for being a public bulletin board for rollups posting their post-execution data to Ethereum
     \end{itemize}
 \end{itemize}
-
-By the end of this paper, you will understand what each layer is responsible for and the upgrades that are coming for all three. 
 
  Justin also \href{https://www.youtube.com/watch?v=8mJDt8TGebc}{gave a talk} at the \href{https://www.youtube.com/watch?v=zeNVsuO_fts&list=PLmkdAgtxf3aidisFxgAfbe7AuMmruh4qE}{Bankless summit} discussing his view of the Roadmap at a high level over the next 5 year time horizon. He discussed how each technical upgrade to Ethereum either improves \textbf{execution throughput}, increases \textbf{data availability}, or hardens and democratizes the \textbf{consensus} layer. Justin briefly discussed each of these layers in his Lean Ethereum blog post, and each upgrade that I dive into in this paper will be bucketed into one of these three layers.
 Before we move on to the rest of the article - a quick refresher on the blockchain trilemma, with an excerpt from my article from three years ago: \\
@@ -287,7 +284,7 @@ One of these mechanisms is ``forward looking", in the sense that it is responsib
 \label{Gasper}
 
 \begin{itemize}
-    \item \href{https://eth2book.info/capella/part2/consensus/lmd_ghost/}{LMD GHOST:}  A combination of two acronyms, ``Last Message Driven" ``Greedy Heaviest Observed Sub-Tree" is the forward looking mechanism of the two. LMD GHOST picks the next block which will be appended to the front of the chain; the block that gets chosen is the block (must be a valid one) that has the most amount of economic weight voted in favor of it and is referred to as the "Head" of the chain. Validators submit their local view of the head of the chain; these votes are called attestations. LMD GHOST aggregates validators' view of the head of the chain, weighted by stake; the block with the most economic weight from validators' submitted attestations establishes the head of the chain. 
+    \item \href{https://eth2book.info/capella/part2/consensus/lmd_ghost/}{LMD GHOST:}  A combination of two acronyms, ``Last Message Driven" ``Greedy Heaviest Observed Sub-Tree" is the forward looking mechanism of the two. LMD GHOST picks the next block which will be appended to the front of the chain; the block that gets chosen is the block (must be a valid one) that has the most amount of economic weight voted in favor of it and is referred to as the ``Head" of the chain. Validators submit their local view of the head of the chain; these votes are called attestations. LMD GHOST aggregates validators' view of the head of the chain, weighted by stake; the block with the most economic weight from validators' submitted attestations establishes the head of the chain. 
     \item \href{https://eth2book.info/capella/part2/consensus/casper_ffg/}{Casper FFG:} The Casper Friendly Finality Gadget is the backward looking mechanism of the two and uses a process called \textit{finalization}. Finalizing blocks is a sequential two step process; first justification, then finalization. Blocks get finalized in groups of 32 blocks; each group of 32 blocks is called an epoch. 
 
     \begin{itemize}
@@ -312,7 +309,7 @@ We now have three ``stages" in the life cycle of an epoch:
     \item \textit{Justification:} $>$2/3rds of the validator set have now committed to never reverting this epoch
     \item \textit{Finalization:} $>$2/3rds of the network is now \textit{aware} that $>$2/3rds of the network has committed to never reverting that epoch and it is now considered final
 \end{itemize}
-
+\clearpage
 \begin{aside}
     An Informal Mathematical Proof of Economic Finality \textit{(Warning: A small bit of math)}\\
     \\
@@ -347,7 +344,7 @@ This slashing condition now holds validators at economic risk if they submit con
 For Ethereum to achieve economic finality today, it takes two epochs to have passed with greater than 66\% of stake having attested to the validity of those Epochs. Because each Epoch has 32 individual 12 second blocks, Ethereum today achieves economic finality after about 12.8 minutes. This is deterministic economic finality - for state history older than 12.8 minutes to be changed, a large amount of staked Ether must be destroyed, approximately \$48 Billion in ETH as of writing!
 
 Ethereum today has about $\approx$ 35.7 Million \href{https://beaconcha.in/}{ETH staked}, which represents just over \$145 Billion in capital at stake, or \$48 Billion in economic security. 
-
+\clearpage
 \subsubsection{Improving Ethereum's Consensus Layer}
 
 There are three main parts to improving the Consensus Layer, their goals are to: 
@@ -379,7 +376,7 @@ Today, there are about 1 Million validators who must submit attestations. Verify
    \caption*{\textit{signature aggregation, from \href{https://vitalik.eth.limo/general/2024/10/23/futures4.html\#:\~:text=How\%20BLS\%20aggregation\%20works.}{Vitalik's blog}}}
 \end{wrapfigure}
 
-Aggregating signatures is a form of consolidation, where adding signatures results in a \textit{combined} signature that maintains the properties of an individual signature. The aggregated signature can then itself be verified using BLS pairings; if the result is valid, the entire group of signatures that were added together are also all valid. Signature aggregation reduces the work load of verifying 32,000 individual signatures down to verifying only 128 groups of $\approx$ 250 signatures per slot, which is significant savings. This is not a computationally intensive operation, but the challenge becomes aggregating the signatures fast enough if we are to move towards achieving finality at the slot resolution (every 12 seconds) rather than at the epoch resolution (32 slots, 6.4 minutes).
+Aggregating signatures is a form of consolidation, where adding signatures results in a \textit{combined} signature that maintains the properties of an individual signature. The aggregated signature can then itself be verified using BLS pairings; if the result is valid, the entire group of signatures that were added together are also all valid. Signature aggregation reduces the work load of verifying 32,000 individual signatures down to verifying only 128 groups of $\approx$ 250 signatures per slot, which is a significant savings. This is not a computationally intensive operation, but the challenge becomes aggregating the signatures fast enough if we are to move towards achieving finality at the slot resolution (every 12 seconds) rather than at the epoch resolution (32 slots, 6.4 minutes).
 
 Moving towards achieving finality at the resolution of single blocks would then require aggregating signatures from the entire validator set of one million validators every 12 seconds, which cannot be done quickly enough using ECADD and BLS verification operations without compromising on Ethereum's goal of keeping validator hardware requirements low. 
 
@@ -392,7 +389,7 @@ To solve this challenge, there are two main competing approaches to achieving Si
 
 \subparagraph{We can aggregate signatures faster} by deprecating the SHA-256 hash function in favor of a much faster, zk-proof friendly hash function called Poseidon. Then, we generate zero knowledge proofs that the signatures were aggregated correctly using the concept of \href{https://hackmd.io/dR4V2ZJmSfC4VNFob_2lRA#52-SNARK-2-Hash-based-recusive-SNARK-to-replace-BLS-Sig-Aggregation}{\textit{recursive SNARKs}}. A SNARK is a Succinct Non-interactive ARgument of Knowledge, a mathematical proof that can be used to prove that a mathematical operation was performed correctly.  SNARKs can be recursively stacked, meaning SNARKs can be iteratively generated to prove the correctness of other SNARKs, which compounds their efficiency. The benefit here being that, a validator would only be responsible for verifying the correctness of one proof that represents the entire validator set of 1M validators, a very computationally simple task. 
 
-To move towards a zk proof centric consensus layer, we must prove the state transition function of the consensus chain, which primarily involves constructing proofs of all three main functions of the beacon chain: signature aggregation using ECADD operations, verifying the aggregated signatures using pairings, and verifying the state itself. This is likely a few years away, but is in progress. 
+To move towards a zk-proof centric consensus layer, we must prove the state transition function of the consensus chain, which primarily involves constructing proofs of all three main functions of the beacon chain: signature aggregation using ECADD operations, verifying the aggregated signatures using pairings, and verifying the state itself. This is likely a few years away, but is in progress. 
 
 \subparagraph{Or, we can just reduce the number of signatures required per slot} by using an Orbit mechanism, as described by Francesco in this \href{https://youtu.be/6VEEAemYaeI?si=4Jm8hafnxuHfrFzt}{talk}.  
 
@@ -405,13 +402,11 @@ There are two requirements to implement this approach:
 
 Validator consolidation, proposed in \href{https://eips.ethereum.org/EIPS/eip-7251}{EIP-7251}, allows node operators, potentially running many validators on one machine already, to now consolidate as many as 64 validators with 32 ETH each, down to one validator securing 2048 ETH.  This aims to reduce the total number of validators on the network while still maintaining the same number of unique validator entities, which would ultimately reduce the amount of validator signatures that need to be aggregated each epoch without harming decentralization. This has the added benefit of allowing smaller node operators to compound their stake, whereas before, they would have to wait to add an additional validator at increments of 32 ETH. For some metrics on validator consolidations: \href{https://pectrified.com/mainnet}{pectrified.com}
 
-The attester committees would then be responsible for attesting to each block. The committee's membership rotates, with the probability a validator is selected to participate in a particular committee proportional to the size of its stake as a fraction of the maximum validator size. Validators with 2048 ETH would be a part of every committee, while validators with 32 ETH would only participate every 64 blocks on average (half as often as today). The chances of being selected for a committee increases linearly with validator size until it hits 100\% at 2048 ETH. Each validator would still earn the same rewards on a per ETH secured basis.  
-
-This would result in committee sizes below 30k validators per slot, making signature aggregation from validators' attestations practical. This would result in fewer signatures required per slot, relative to if we had every validator attest to every slot, which would be $>$1M signatures every 12 seconds. 
+The attester committees would then be responsible for attesting to each block. The committee's membership rotates, with the probability a validator is selected to participate in a particular committee proportional to the size of its stake as a fraction of the maximum validator size. Validators with 2048 ETH would be a part of every committee, while validators with 32 ETH would only participate every 64 blocks on average (half as often as today). The chances of being selected for a committee increases linearly with validator size until it hits 100\% at 2048 ETH. Each validator would still earn the same rewards on a per ETH secured basis.  This would result in committee sizes of less than 30k validators per slot, making signature aggregation from validators' attestations practical. 
 
 In this \href{https://ethresear.ch/t/orbit-ssf-solo-staking-friendly-validator-set-management-for-ssf/19928}{post} on the ethresearch forum, \href{https://x.com/fradamt}{Francesco} explores a few different approaches to Orbit SSF, and at the end discusses economic incentives to promote Validator consolidation of large validators, since the network cannot force validators to consolidate their stake. 
 
-The end result is that economic finality is achieved far faster with an Orbit mechanism than 64 slots as in today's finality mechanism. 
+The end result is that economic finality is achieved far faster with an Orbit mechanism than it is in today's finality mechanism which takes 64 slots (12.8 minutes). 
 
 One of the tradeoffs that the Orbit mechanism's approach to SSF makes, as Vitalik points out in his \href{https://vitalik.eth.limo/general/2024/10/14/futures1.html#:~:text=but%20are%20okay%20with%20the%20cost%20of%20attack%20being%20perhaps%2010x%20less%20than%20today}{blog}, is that Ethereum's economic security would be \textit{limited by the stake size of each committee}, effectively reducing it's overall economic security. 
 
@@ -428,20 +423,25 @@ The concept to mitigate this kind of attack is rather simple, but there are comp
 
 The process of selecting the next proposer is called \href{https://a16zcrypto.com/posts/article/leader-election-from-randomness-beacons-and-other-strategies/}{``Leader Election"}. Making leader election ``secret" involves only the selected proposer knowing that they will be proposing a block at some point in the near future, and each block will need to be proposed by one proposer (unless we move towards a multi-proposer architecture). Putting it together, we get Single Secret Leader Election, SSLE. What makes SSLE difficult is the combination of the leader election being \textit{both} secret \textit{and} single (only selecting one proposer.) Tim Roughgarden explains some of the intricacies of this beginning in \href{https://www.youtube.com/watch?v=au-pyenGexg}{episode 12.8} in his \href{https://www.youtube.com/watch?v=ZSqxGdsmLHs&list=PLEGCF-WLh2RLOHv_xUGLqRts_9JxrckiA&index=62}{series} on Proof of Stake sybil resistant protocols.  
 
-Personally, I think there's a decent chance we don't see an implementation of SSLE in Ethereum until after zero-knowledge proofs become core to the protocol. 
-
+Personally, I think there's a decent chance we won't see an implementation of SSLE in Ethereum until after zero-knowledge proofs become core to the protocol. 
+\clearpage
 \subsubsubsection{Preconfirmations}
 \label{Preconfirmations}
 
 One of the user experience challenges in Ethereum today is the fact that users are faced with 12 second block times; this delay can cause uncertainty around how exactly a submitted transaction gets executed onchain. 
 
+\begin{wrapfigure}{r}{0.5\textwidth}
+   \includegraphics[width=0.5\textwidth]{incl and seq.png}
+   \caption*{\textit{From the \href{https://www.youtube.com/watch?v=2IK136vz-PM}{Sequencing and Preconfirmations call \#1}}}
+\end{wrapfigure}
+
 To address this, Justin Drake \href{https://ethresear.ch/t/based-preconfirmations/17353}{has proposed} the concept of a preconfirmation, which he discusses in detail in this \href{https://www.youtube.com/watch?v=2IK136vz-PM}{talk}. Preconfirmations involve a proposer providing a promise of transaction inclusion in return for a tip from the user and at the risk of slashed collateral if the proposer reneges on their promise. Preconfirmations would improve Ethereum's UX by providing increased certainty for users that their transaction will be included onchain in a time frame that is more than an order of magnitude faster than the L1 block time of 12 seconds. 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{incl and seq.png}
-    \caption{\textit{From the \href{https://www.youtube.com/watch?v=2IK136vz-PM}{Sequencing and Preconfirmations call \#1}}}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.7\linewidth]{incl and seq.png}
+%    \caption{\textit{From the \href{https://www.youtube.com/watch?v=2IK136vz-PM}{Sequencing and Preconfirmations call \#1}}}
+%\end{figure}
 
 In order to have the ability to promise inclusion for a submitted transaction, an L1 proposer must have the right to sequence transactions. Sequencing rights involve the ability to place submitted transactions in any order, and it is usually auctioned off to a block builder that can order transactions in the most profitable way, referred to as maximizing extractable value \hyperref[MEV]{(MEV)}. Because an L1 proposer enjoys monopoly power over sequencing by definition, that proposer can accept requests for the preconfirmation of a transaction and then utilize their monopoly power of transaction sequencing to ensure that transaction gets included in a timely manner. 
 
@@ -465,7 +465,7 @@ Preconfirmations on Ethereum L1 are already possible today and the first preconf
 
 Additionally, Preconfirmations have deep synergy with Layer 2 networks, the focus of the next Section, because it could address UX challenges associated with \textit{based sequencing.} 
 
-For some more specifics on Preconfirmations, check out this two part series "Preconfirmations for the Average Joe" \href{https://x.com/ceciliaz030/status/1875558701324759392}{Part 1} and \href{https://x.com/ceciliaz030/status/1890688136491278457}{Part 2}, written by \href{https://x.com/ceciliaz030}{Ceciliaz}. Another good resource is this list curated by Nethermind: \href{https://github.com/NethermindEth/awesome-preconfirmations}{awesome preconfirmations}. 
+For some more specifics on Preconfirmations, check out this two part series ``Preconfirmations for the Average Joe" \href{https://x.com/ceciliaz030/status/1875558701324759392}{Part 1} and \href{https://x.com/ceciliaz030/status/1890688136491278457}{Part 2}, written by \href{https://x.com/ceciliaz030}{Ceciliaz}. Another good resource is this list curated by Nethermind: \href{https://github.com/NethermindEth/awesome-preconfirmations}{awesome preconfirmations}. 
 
 \subsection[\protect\textbf{\small Ethereum's Data Layer}]{Ethereum's Data Layer}
 \label{Layer 2s}
@@ -476,7 +476,7 @@ The goal of upgrading Ethereum's Data Layer is simply:
     \item \textbf{scale Ethereum's transaction throughput} without compromising on security and decentralization by ensuring validators are able to participate from home on consumer hardware. 
 \end{itemize}
 
-A naive way to scale the layer 1 network would be to increase the computational limits of each block (the gas limit) and increase block size. This is a form of \textit{vertical} scaling This would allow more transactions per second to be processed by the network. The drawback to this simple approach is that it would require validators to have more expensive compute hardware and more data storage; increasing the hardware requirements beyond a certain point would make participating in Ethereum consensus too expensive and would centralize the validator set. 
+A naive way to scale the layer 1 network would be to increase the computational limits of each block (the gas limit) and increase block size. This would allow more transactions per second to be processed by the network. The drawback to this simple approach is that it would require validators to have more expensive compute hardware and more data storage; increasing the hardware requirements beyond a certain point would make participating in Ethereum consensus too expensive and would centralize the validator set. 
 
 How do we scale Ethereum without compromising on security and decentralization? To accomplish this, the Ethereum community has chosen to pursue a development roadmap focused on scaling Ethereum \textit{both horizontally and vertically} by taking advantage of advanced cryptography in both dimensions. In this section we will focus on the \textit{horizontal} aspect of this scaling approach by improving the transaction throughput of the layer 2 networks that are built on top of Ethereum. The section on \hyperref[Execution Layer]{validity proofs and native rollups} will focus on vertical scaling \textit{without compromising on minimal hardware requirements for validators}, as would be the case in the naive vertical scaling approach described in the previous paragraph. 
 
@@ -484,14 +484,19 @@ How do we scale Ethereum without compromising on security and decentralization? 
 
 To quickly recap on what a Layer 2 network (L2) is, in very simple terms, Layer 2 networks offer users lower transaction costs relative to Layer 1 Ethereum (L1) by socializing the cost of posting transaction data to Ethereum across many users. User transactions are batched together, the raw transaction data is compressed, and the compressed transaction data is posted to a public ledger. The cost to post that data, which is orders of magnitude less than posting each of those individual transactions to the L1, is then socialized across those same users. There is a rich trade-off space around where that data gets posted, but what's relevant is that user transaction data does get posted and is publicly available for anyone to verify. Layer 2 networks that post their data to the L1 are called ``rollups". The largest, most commonly used L2s built on Ethereum today are all Rollups; these include \href{https://x.com/Optimism}{Optimism}, \href{https://x.com/arbitrum}{Arbitrum}, Coinbase's layer 2 network called \href{https://x.com/base}{Base}, as a few examples. Robinhood also \href{https://www.youtube.com/watch?v=FBHmAq5lmZQ&t=1s}{recently announced} their own layer 2, which will be built using Arbitrum's stack.  
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.65\linewidth]{rollups.png}
-    \caption{\textit{From a brief zk-Rollup explainer on \href{https://en.bitpush.news/articles/4451336}{bitpush news} by Lincoln Murr}}
-    \label{fig:enter-label}
-\end{figure}
+\begin{wrapfigure}{r}{0.5\textwidth}
+   \includegraphics[width=0.5\textwidth]{rollups.png}
+   \caption*{\textit{From a brief zk-Rollup explainer on \href{https://en.bitpush.news/articles/4451336}{bitpush news} by Lincoln Murr}}
+\end{wrapfigure}
 
-An important property of an L2 network is that users must be able to \href{https://x.com/apoorveth/status/1981408173400740037}{permissionlessly withdraw from the Layer 2} by submitting a transaction on Ethereum L1; if users can't withdraw their funds from the L2 permissionlessly, then it is not considered a layer 2 network in the canonical sense. In this way, the Ethereum Layer 1 is able to extend (most of) its property rights to users on L2s while offering access to blockspace that is $\approx$10 - 100x cheaper. Here's an \href{https://x.com/donnoh_eth/status/1879210463952818472}{interesting example} of when donnoh.eth was able to force a transaction through on Sony's permissioned layer 2 network, \href{https://x.com/soneium}{Soneium}.  
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.65\linewidth]{rollups.png}
+%    \caption{\textit{From a brief zk-Rollup explainer on \href{https://en.bitpush.news/articles/4451336}{bitpush news} by Lincoln Murr}}
+%    \label{fig:enter-label}
+%\end{figure}
+
+An important property of an L2 network is that users must be able to \href{https://x.com/apoorveth/status/1981408173400740037}{permissionlessly withdraw from the Layer 2} by submitting a transaction on Ethereum L1; if users can't withdraw their funds from the L2 permissionlessly, then it is not considered a layer 2 network in the canonical sense. In this way, the Ethereum Layer 1 is able to extend (most of) its property rights to users on L2s while offering access to blockspace that is $\approx$ 10 - 100x cheaper. Here's an \href{https://x.com/donnoh_eth/status/1879210463952818472}{interesting example} of when donnoh.eth was able to force a transaction through on Sony's permissioned layer 2 network, \href{https://x.com/soneium}{Soneium}.  
 
 There are certainly some tradeoffs when it comes to the property rights on L2s versus the L1;  \href{https://l2beat.com/scaling/summary}{L2beat} does a great job highlighting what the tradeoffs are by evaluating Rollups on a set of criteria proposed by Vitalik \href{https://ethereum-magicians.org/t/proposed-milestones-for-rollups-taking-off-training-wheels/11571}{here}. 
 
@@ -505,13 +510,13 @@ To achieve Stage 2, a Rollup must:
     \item \textbf{State validation:} If a faulty transaction was executed by the L2, anyone must be able to permissionlessly submit a fraud proof that a transaction executed by the L2 was faulty in order to revert the faulty transaction
     \item \textbf{Data Availability:} The rollup's transaction data must be posted on Ethereum L1 such that it is available for fraud proof construction
     \item \textbf{Self propose:} Anyone can permissionlessly become a block proposer to the L2 after a time period of inactivity from the whitelisted block proposers
-    \item \textbf{Exit Window:} There must be a long enough delay between when  an upgrade to the rollup is proposed and when the upgrade is implemented for users to exit back to the L1 permissionlessly. This way, if the upgrade is malicious, users have enough time to permissionlessly exit the rollup to avoid the malicious upgrade. This is generally accepted to be 30 days. As of writing, no rollup has an upgrade delay that meets 30 days. 
+    \item \textbf{Exit Window:} There must be a long enough delay between when  an upgrade to the rollup is proposed and when the upgrade is implemented for users to exit back to the L1 permissionlessly. This way, if the upgrade is malicious, users have enough time to permissionlessly exit the rollup to avoid the malicious upgrade. This is generally accepted to be 30 days. As of October 2025, no rollup has an upgrade delay that meets 30 days. 
 \end{itemize}
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{slices.png}
-    \caption{\textit{\href{https://l2beat.com/scaling/projects/arbitrum#stage}{L2Beat} gives Layer 2s colored slices based on which of the above requirements are met.}}
+    \caption{\textit{\href{https://l2beat.com/scaling/projects/arbitrum\#stage}{L2Beat} gives Layer 2s colored slices based on which of the above requirements are met.}}
 \end{figure}
 
 So what is the fundamental bottleneck for increasing transaction throughput on Layer 2 networks without increasing user transaction fees?\\
@@ -520,12 +525,12 @@ Ethereum's ability to host the data produced by L2s from user transactions is ca
 
 \subsubsection{Increasing Data Availability Throughput for Ethereum}
 
-As mentioned above, L2 networks must post their data to Etheruem L1 such that it is available for anyone to verify correct transaction execution. 
-
 \begin{wrapfigure}{r}{0.2\textwidth}
    \includegraphics[width=0.2\textwidth]{blobs.png}
-   \caption*{\textit{an \href{https://www.eip4844.com/#faq}{FAQ about blobs}}}
+   \caption*{\textit{an \href{https://www.eip4844.com/\#faq}{FAQ about blobs}}}
 \end{wrapfigure}
+
+As mentioned above, L2 networks must post their data to Ethereum L1 such that it is available for anyone to verify correct transaction execution. 
 
 Before EIP-4844, L2 networks were posting their transaction data to Ethereum's \href{https://www.quicknode.com/guides/ethereum-development/transactions/ethereum-transaction-calldata}{call data}, which is a very limited resource for storage. Call data is also expensive because it persists on the chain forever. The competition for this limited space between Rollups only exacerbated the issue. 
 
@@ -533,9 +538,9 @@ To address this, in \href{https://eips.ethereum.org/EIPS/eip-4844}{EIP-4844} the
 
 Blobs have been extremely effective at reducing L2s' costs to post their data to L1; these savings are passed on to users. This is nicely visualized on \href{https://l2beat.com/scaling/projects/arbitrum#onchain-costs}{L2beat} for each L2, here is Arbitrum's:  
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{blob costs.PNG}
+    \includegraphics[width=0.8\linewidth]{blob costs.PNG}
     \caption{\textit{can you tell when Arbitrum switched from call data to blobs?}}
     \label{fig:enter-label}
 \end{figure}
@@ -544,28 +549,30 @@ In order for users to enforce correct transaction execution, all of the data gen
 
 We have created a cheaper way to store L2 transaction data, but it is still not enough! Only a maximum of 9 blobs can be posted per block on Ethereum, and the blob fee market targets a 6 blob average per block through a fee mechanism. Each blob can only be 128 kilobytes at maximum, and at 12 second block times, this means that the average data availability throughput on Ethereum is approximately 5.5 Gigabytes of space per day, not enough if Ethereum is to be the financial center of gravity for the entire globe. 
 
-\begin{figure}
+One way Ethereum can increase its data availability throughput is to simply increase the number of blobs that can be posted with each block. Ethereum did just that in its most recent upgrade, Pectra, where the blobs per block target was increased from three to six blobs per block. The effect of this change can be seen very clearly in this below chart:
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{blobs per block.png}
     \caption{\textit{Blob target increased from 3 to 6 blobs per block in May of 2025, chart is from Hildobby's \href{https://dune.com/hildobby/blobs}{blob dashboard}}}
     \label{fig:enter-label}
 \end{figure}
 
-One way Ethereum can increase its data availability throughput is to simply increase the number of blobs that can be posted with each block. Ethereum did just that in its most recent upgrade, Pectra, where the blobs per block target was increased from three to six blobs per block. The effect of this change can be seen very clearly in this below chart:
-
 With \href{https://eips.ethereum.org/EIPS/eip-7892}{EIP-7892}, Mark Mackey (\href{https://x.com/EthDreamer}{@ethDreamer}) and Raul Kripalani (\href{https://github.com/raulk}{@raulk}) have also introduced the concept of ``Blob Parameter Only" forks, in which a hard fork would only serve to increase the number of blobs per block, and nothing else. 
 
 A challenge with continuously increasing the number of blobs per block is that the network cannot keep increasing the blobs per block indefinitely without negatively impacting the hardware requirements of becoming a validator due to the increased storage requirements of storing the blobs -  \textit{but Ethereum needs to scale even further.} How can Ethereum make even more efficient use of its blob capacity?
 
-One way we can scale this data availability throughput further, without incresaing validator hardware requirements, is through \textbf{Data Availability Sampling.}
+One way we can scale this data availability throughput further, without increasing validator hardware requirements, is through \textbf{Data Availability Sampling.}
+
+\clearpage
+
+\hypertarget{PeerDAS}{\subsubsection{Data Availability Sampling - PeerDAS}}
+\label{PeerDAS}
 
 \begin{wrapfigure}{r}{0.4\textwidth}
    \includegraphics[width=0.4\textwidth]{polynomials.PNG}
    \caption*{polynomials of degree $n$ - image credit \href{https://en.wikipedia.org/wiki/Polynomial}{wikipedia}}
 \end{wrapfigure}
-
-\hypertarget{PeerDAS}{\subsubsection{Data Availability Sampling - PeerDAS}}
-\label{PeerDAS}
 
 Because Ethereum wants to minimize hardware requirements, and bandwidth constraints in particular, Ethereum needs to prove that all of the data is available \textit{without forcing validators to download all of the data.} To do this, validators can sample the data contained in the blobs to check for availability and can prove with an extremely high probability that all of the data is available \textit{without downloading all of it}. This is \textbf{Data Availability Sampling.}
 
@@ -582,7 +589,7 @@ It works with the following steps:
 
 We start by converting the transaction data into a polynomial - this is called ``encoding" the data. It works by taking advantage of the fact that polynomials of a specific order $n$ in a finite field are unique, when constructed from a data set of $n+1$ points. 
 
-We then evaluate the polynomial at an additional set of points to extend the blob size by a factor of $2$. Extending the blob size introduces redundancy to the transaction data - if any half of the blob data is known, we can determine the polynomial used to construct the blob, and the rest of the entirety of the blob can be reconstructed. The validator set propagates that block throughout the network; because we know that the original transaction data can be reconstructed as long as more than half (\textit{sidenote: it's not actually half, I'll be referring to half because its easier, but a16z does a \href{https://a16zcrypto.com/posts/article/an-overview-of-danksharding-and-a-proposal-for-improvement-of-das/}{fantastic job} breaking this down a bit more deeply if you're curious}) of the data is made available, then the Ethereum network only has to prove that more than half of the blob data is available.  
+We then evaluate the polynomial at an additional set of points to extend the blob size by a factor of $2$. Extending the blob size introduces redundancy to the transaction data - if $>$ half of the blob data is known, we can determine the polynomial used to construct the blob, and the rest of the entirety of the blob can be reconstructed. The validator set propagates that block throughout the network; because we know that the original transaction data can be reconstructed as long as more than half (\textit{sidenote: it's not actually half, I'll be referring to half because its easier, but a16z does a \href{https://a16zcrypto.com/posts/article/an-overview-of-danksharding-and-a-proposal-for-improvement-of-das/}{fantastic job} breaking this down a bit more deeply if you're curious}) of the data is made available, then the Ethereum network only has to prove that more than half of the blob data is available.  
 
 Now that the network only has to prove that \textit{half of the data is available,} we can introduce the ``Sampling" part of \textbf{Data Availability Sampling}. Each validator is assigned some pseudo-random subset of the blob data and is responsible for downloading that data, storing it, and making it available upon request. 
 
@@ -611,15 +618,12 @@ How can we improve the transactions per second even further? By reducing the amo
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{erc20 data compression.jpg}
-    \caption{\textit{reducing erc20 transfer data requirements, original 
+    \includegraphics[width=0.7\linewidth]{erc20 data compression.jpg}
+    \caption{\textit{reducing erc20 transfer data requirements, Vitalik's original 
 \href{https://x.com/VitalikButerin/status/1554983955182809088}{tweet}}}
 \end{figure}
 
 By reducing the amount of data required per transaction, we can increase the maximum transactions per second of the chain. 
-
-The rest of the Surge track is a bit beyond the scope of this paper, but you can read more about it in Vitalik's \href{https://vitalik.eth.limo/general/2024/10/17/futures2.html}{blog post.} 
-
 
 \begin{comment}
 \subsubsection{Based Rollups}
@@ -647,8 +651,6 @@ Layer 2 Rollups use sequencers to order transactions that are submitted by users
 \subsection[\protect\textbf{\small Ethereum's Execution Layer}]{Ethereum's Execution Layer}
 \label{Execution Layer}
 
-\subsubsection*{\normalsize \quad Making state verification and execution easy}
-
 One of the ultimate goals of Ethereum as decentralized blockchain technology is enabling easy verification that the current state of the chain is the deterministic output of everything that has ever happened on that chain. At its simplest, a blockchain can be boiled down to a \textbf{State Transition Function} (STF), where the input is the current state of the blockchain and the incoming transactions, and the output is the newly updated state of the chain. As Vitalik discusses in his blog, 
 
 \begin{align}
@@ -668,7 +670,7 @@ In the future, we can \textit{decouple execution and verification} by eliminatin
 There are three main parts to improving the execution layer, their goals are:
 
 \begin{itemize}
-    \item \textbf{Stateless Verification:} Minimizing the amount of data that is needed to store the \textit{current state} of the blockchain $S$ (which today consumes hundreds of GB (input correct stat here) and needs to be stored by fully verifying Ethereum nodes
+    \item \textbf{Stateless Verification:} Minimizing the amount of data that is needed to store the \textit{current state} of the blockchain $S$ (which today consumes hundreds of GB) and needs to be stored by fully verifying Ethereum nodes
     \item \textbf{Validity proofs:} Using mathematical proofs that are easily checked for correctness (and can even be verified on devices with limited compute, e.g. smart watches) to prove that the \textit{state transition function}, $STF( S,B)$, correctly outputs the state of the chain $S'$ after taking the current sate and the current block as an input (i.e. executing users' transactions correctly)
     \item \textbf{Native Execution:} Because validity proofs are constant size and verifying their correctness takes milliseconds, the EVM can be enshrined as a \textit{precompile}, enabling scaling increases of $>$100x on the Ethereum Layer 1
 \end{itemize}
@@ -688,24 +690,24 @@ Let's dive a bit deeper into both stateless verification, validity proofs, and n
 \subsubsection{Stateless Verification}
 \label{Stateless Verification}
 
-An important part of making verification ``easy" is minimizing the hardware requirements of verifying the state, where ``state" refers to current account balances, every smart contract that has been deployed to Ethereum, data stored on chain, etcetera. Verifying the state involves starting with the initial state of the chain, referred to as ``genesis" (or a socially propagated checkpoint to prevent long range attacks)\footnote{Weak subjectivity involves establishing checkpoints to eliminate the threat of long range attacks, read more \href{https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/weak-subjectivity/}{here}}, and re-executing every transaction that has occurred on chain to verify that you got the same result as everyone else. Today, this requires a large amount of data which grows every day. The ultimate goal of \textbf{stateless verification} is to use mathematical proofs that are easily verifiable to prove Ethereum's state \textit{without needing to download all of Ethereum's state data}, which today is close to (2TB) and grows in size at approximately 30GB per year. This data is stored in a \href{https://www.alchemy.com/docs/tree-data-structures}{``tree"} format.\footnote{Shoutout to \href{https://x.com/Alchemy}{Alchemy} for the fantastic four part series on data storage in Ethereum in their section on cryptography basics you can find \href{https://www.alchemy.com/docs/tree-data-structures}{here}} Trees are used in computer science to store data efficiently for data management and retrieval. 
+An important part of making verification ``easy" is minimizing the hardware requirements of verifying the state, where ``state" refers to current account balances, every smart contract that has been deployed to Ethereum, data stored onchain, etcetera. Verifying the state involves starting with the initial state of the chain, referred to as ``genesis" (or a socially propagated checkpoint to prevent long range attacks)\footnote{Weak subjectivity involves establishing checkpoints to eliminate the threat of long range attacks, read more \href{https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/weak-subjectivity/}{here}}, and re-executing every transaction that has occurred onchain to verify that you got the same result as everyone else. Today, this requires a large amount of data which grows every day. The ultimate goal of \textbf{stateless verification} is to use mathematical proofs that are easily verifiable to prove Ethereum's state \textit{without needing to download all of Ethereum's state data}, which today is close to (2TB) and grows in size at approximately 30GB per year. This data is stored in a \href{https://www.alchemy.com/docs/tree-data-structures}{``tree"} format.\footnote{Shoutout to \href{https://x.com/Alchemy}{Alchemy} for the fantastic four part series on data storage in Ethereum in their section on cryptography basics you can find \href{https://www.alchemy.com/docs/tree-data-structures}{here}} Trees are used in computer science to store data efficiently for data management and retrieval. 
+
+Blockchains store and retrieve data with every change to state, so it is important to both minimize the time it takes to retrieve data from the set, as well as minimize the total amount of data storage needed for the blockchain to function. Today in Ethereum, this data is stored in the form of a Merkle PATRICIA trie, MPT for short, (generally pronounced ``try", short for re\textit{trie}val - all tries are trees, but not all trees are tries; 
+ PATRICIA being short for Practical Algorithm to Retrieve Information Coded in Alphanumeric), which is a special type of search tree. 
 
 \begin{wrapfigure}{r}{0.6\textwidth}
    \includegraphics[width=0.6\textwidth]{tree.PNG}
    \caption*{\textit{A Tree Diagram from \href{https://www.alchemy.com/docs/tree-data-structures}{Alchemy's docs}}}
 \end{wrapfigure}
 
-Blockchains store and retrieve data with every change to state, so it is important to both minimize the time it takes to retrieve data from the set, as well as minimize the total amount of data storage needed for the blockchain to function. Today in Ethereum, this data is stored in the form of a Merkle PATRICIA trie, MPT for short, (generally pronounced ``try", short for re\textit{trie}val - all tries are trees, but not all trees are tries; 
- PATRICIA being short for Practical Algorithm to Retrieve Information Coded in Alphanumeric), which is a special type of search tree. 
-
 Let's break down what makes Ethereum's search tree both a ``Merkle" and a ``PATRICIA trie". Ethereum's data structure is considered \textbf{Merkle} because of how the integrity of the contents of the trie are verified - using hashes. In the context of verifying state, the advantage of this architecture is that it becomes easy for anyone to verify transaction ``D" exists in the block without even needing the entire contents of the block, by calculating the hash of the root using only hash of D, hash of C and D together (R), and hashing Q+R; if the result is different than the expected result, we know that \textit{something} is different between the two data structures we are comparing (i.e. your local view of the contents of that block versus the network's view, as a simple example), even if the difference is extremely small. 
-
-Ethereum's trie is described as \textbf{PATRICIA} because it is organized such that shared prefixes are not stored more than once (this is called prefix based), meaning that all Ethereum addresses starting with ``0x1..." are stored under the same branch. This reduces both the amount of data storage required to store state and the retrieval time. Ethereum's MPT is hexary, meaning each branch of the state tree can have 16 children. 
 
 \begin{wrapfigure}{r}{0.5\textwidth}
    \includegraphics[width=0.5\textwidth]{time complexity.PNG}
    \caption*{\textit{Also from \href{https://www.alchemy.com/docs/tree-data-structures}{Alchemy's docs}}}
 \end{wrapfigure}
+
+Ethereum's trie is described as \textbf{PATRICIA} because it is organized such that shared prefixes are not stored more than once (this is called prefix based), meaning that all Ethereum addresses starting with ``0x1..." are stored under the same branch. This reduces both the amount of data storage required to store state and the retrieval time. Ethereum's MPT is hexary, meaning each branch of the state tree can have 16 children. 
 
 Retrieving data from data structures for verification requires both \textit{time} and the \textit{data itself}. \href{https://en.wikipedia.org/wiki/Time_complexity}{Time complexity} is the relationship between how long it takes to search a specific data structure relative to the growth of its input size \textit{n}; \href{https://en.wikipedia.org/wiki/Space_complexity}{space complexity} is a similar concept, but instead focuses on minimizing storage required by storing data efficiently, such as in an MPT structure. Space and time complexity are expressed using big \textit{``O"} notation, with the function in the parentheses representing the relationship between the growth of the size of the input and the length of time it takes to compute the output, or the amount of storage space required. MPTs are considered fairly efficient, with the time it takes to search the tree \textit{O(log(n))}. 
 
@@ -738,18 +740,18 @@ If Ethereum wants to transition to relying on \textbf{witnesses}, then it must s
     \item[] \textit{Advantages} inlude:
 \end{itemize}
 
-    \begin{itemize}
+    \begin{enumerate}
         \item More mature than STARK proofs, implementation would be simpler and faster
         \item Verkle proofs are updateable, which can use useful for proving the validity of transactions in the mempool and Inclusion Lists before they are propagated to the rest of the network
-    \end{itemize}
+    \end{enumerate}
 
 \begin{itemize}
     \item[] \textit{Disadvantages} include:
 \end{itemize}
 
-\begin{itemize}
+\begin{enumerate}
     \item Elliptic curves cryptography is \textit{not} quantum resistant, so switching to Verkle trees means potentially risking additional hard forks down the road to harden the chain against quantum computers
-\end{itemize}
+\end{enumerate}
     
 \end{minipage}\hfill % Horizontal fill for separation
 \begin{minipage}[t]{0.48\textwidth} % Right minipage
@@ -763,7 +765,6 @@ If Ethereum wants to transition to relying on \textbf{witnesses}, then it must s
         \item STARKs over hash functions add quantum resistance
         \item Can reduce full node sync time relative to Verkle trees
         \item STARKs compress witness data and have a fixed size overhead, minimizing validator bandwidth requirements even further
-        \item Can reduce full node sync time relative to Verkle trees
     \end{enumerate}
 
 \begin{itemize}
@@ -785,9 +786,9 @@ If I had to take an educated guess, I would bet that the Ethereum community come
 \subsubsection{Validity Proofs and zkVMs}
 \label{Validity Proofs}
 
-Validity Proofs involve proving the state transition itself. The goal is to first prove current state (using \textbf{stateless verification}) and then to prove \textit{the state transition occurred correctly} (processing users' transactions correctly) without needing to re-execute on chain transactions locally by verifying lightweight, compact mathematical proofs, an operation that can be done on devices with very limited compute. Justin Drake has been explicit that the goal is to even be able to do this on devices as computationally limited as smart watches; he has referred to this as ``\href{https://youtu.be/8mJDt8TGebc?si=pN0WVLy1tBWHoFDs&t=1224}{feather staking}". Once feather staking becomes possible, almost any device with any amount of compute power would be sufficient for running a validator, making Ethereum validation much more accessible. This is not possible today because validators must re-execute every transaction on the blockchain to check for validity. 
+Validity Proofs involve proving the state transition itself. The goal is to first prove current state (using \textbf{stateless verification}) and then to prove \textit{the state transition occurred correctly} (processing users' transactions correctly) without needing to re-execute onchain transactions locally by verifying lightweight, compact mathematical proofs, an operation that can be done on devices with very limited compute. Justin Drake has been explicit that the goal is to even be able to do this on devices as computationally limited as smart watches; he has referred to this as ``\href{https://youtu.be/8mJDt8TGebc?si=pN0WVLy1tBWHoFDs&t=1224}{feather staking}". Once feather staking becomes possible, almost any device with any amount of compute power would be sufficient for running a validator, making Ethereum validation much more accessible. This is not possible today because validators must re-execute every transaction on the blockchain to check for validity. 
 
-The key unlock validity proofs allows is we can \textit{massively increase the block gas limit}. Gas is a unit of measurement of the computational effort required to execute transactions using the state transition function. The validator set has a limited amount of compute and storage, so a fee mechanism is used to limit consumption of those resources. This fee mechanism sets a price for each computational unit, called the \textit{gas price}. Gas is consumed when users pay transaction fees and it is denominated in Gigawei per gas, or one billionth of one Ether. 
+The key unlock validity proofs allows is we can \textit{massively increase the block gas limit}. Gas is a unit of measurement of the computational effort required to execute transactions using the state transition function. The validator set has a limited amount of compute and storage, so a fee mechanism is used to limit consumption of those resources. This fee mechanism sets a price for each computational unit, called the \textit{gas price}. Gas is consumed when users pay transaction fees and the transaction fee is denominated in Gigawei per gas, or one billionth of one Ether. 
 
 \begin{figure}[H]
     \centering
@@ -826,7 +827,7 @@ To avoid the need to generate proofs of the EVM directly, many zkEVM teams take 
     \item RISC-V has an open ecosystem with mature tooling and supports 64-bit operations, which can fit in the finite fields used for zero-knowledge proofs
 \end{itemize} 
 
-This transition will likely \href{https://vitalik.eth.limo/general/2025/05/03/simplel1.html#:~:text=the%20following%20process%20for%20a%20VM%20change}{happen in stages}, will result in making proof generation practical, and will ultimately enable \href{https://x.com/0xJaehaerys/status/1944859201291083887}{orders of magnitude increases in scaling} of Ethereum L1. Because validators will no longer be responsible for block execution, but instead will \textit{only be responsible for checking validity proofs that are fixed in size regardless of the contents of the block being proved}, the gas limit can be increased significantly. Justin Drake even believes Ethereum can \href{https://www.youtube.com/watch?v=yvP39-EOADU}{reach 10 Million TPS by 2035}. For more on the state of validity proofs, \href{https://ethproofs.org/}{ethproofs.org} shows a dashboard of block proving times, costs, and trust assumptions associated with each of the different zkVMs.
+This transition will likely \href{https://vitalik.eth.limo/general/2025/05/03/simplel1.html#:~:text=the%20following%20process%20for%20a%20VM%20change}{happen in stages}, will result in making proof generation practical, and will ultimately enable \href{https://x.com/0xJaehaerys/status/1944859201291083887}{orders of magnitude increases in scaling} of Ethereum L1. Because validators will no longer be responsible for block execution, but instead will \textit{only be responsible for checking validity proofs that are fixed in size regardless of the contents of the block being proved}, the gas limit can be increased significantly. Justin Drake even believes Ethereum can \href{https://www.youtube.com/watch?v=yvP39-EOADU}{reach 10 Million aggregate TPS by 2035}. For more on the state of validity proofs, \href{https://ethproofs.org/}{ethproofs.org} shows a dashboard of block proving times, costs, and trust assumptions associated with each of the different zkVMs.
 
 \subparagraph{But how do we know zero-knowledge proofs are not ``proving" invalid inputs?} To be confident enough to protect hundreds of billions in value, we must be confident they won't \href{https://blog.lambdaclass.com/responsible-disclosure-of-an-exploit-in-succincts-sp1-zkvm-found-in-partnership-with-3mi-labs-and-aligned-which-arises-from-the-interaction-of-two-distinct-security-vulnerabilities/}{``prove" something that is invalid.} 
 
@@ -843,7 +844,7 @@ Validity proofs are the technological innovation that make Native Execution prac
 
 Validity proofs remove the gas limit as a bottleneck, allowing an arbitrary amount of transactions to be included in each Ethereum L1 block. This unlocks \textit{Native Execution}, which involves enshrining the execution layer's state transition function, i.e. the EVM, as a \textit{precompile}. Layer 2 networks can then call this precompile, which is essentially an input/output function that is by construction equivalent to the EVM's state transition function. 
 
-Rollups that take advantage of this new precompile will be called \textit{Native Rollups}. Native Rollups have significant advantages over non-native rollups, namely around reducing attack vectors for users, simplicity of development, and forward compatibility with Ethereum L1. \href{https://x.com/pumatheuma}{Uma Roy}, CEO of \href{https://x.com/SuccinctLabs}{Succint Labs} developing a leading zkVM, and Justin Drake do a fantastic job \href{https://youtu.be/0TOnHHnB6Ro?si=dZFF5jDdiLCUE4ou}{breaking this down} in a Bankless interview. \\
+Rollups that take advantage of this new precompile will be called \textit{Native Rollups}. Native Rollups have significant advantages over non-native rollups, namely around reducing attack vectors for users, simplicity of development, and forward compatibility with Ethereum L1. \href{https://x.com/pumatheuma}{Uma Roy}, CEO of \href{https://x.com/SuccinctLabs}{Succinct Labs} developing a leading zkVM, and Justin Drake do a fantastic job \href{https://youtu.be/0TOnHHnB6Ro?si=dZFF5jDdiLCUE4ou}{breaking this down} in a Bankless interview. \\
 
 Native Rollups have the following advantages over non-native rollups: 
 
@@ -851,7 +852,7 @@ Native Rollups have the following advantages over non-native rollups:
 
 In the Bankless interview with Uma and Justin, David does a great job \href{https://youtu.be/0TOnHHnB6Ro?si=7UiKfIUPfdSi_Wuk&t=1827}{revisiting} the concept of Rollup \hyperref[Stages]{stages}, in which there are five requirements for rollups. One of those requirements involves having \href{https://l2beat.com/scaling/projects/arbitrum#state-validation}{very complex} fraud proof infrastructure that would allow a user to prove a faulty state transition occurred and revert it. \begin{wrapfigure}{r}{0.3\textwidth}
    \includegraphics[width=0.3\textwidth]{pie slice.png}
-   \caption*{\textit{State Validation is removed as a risk vector for users, graphic from \href{https://l2beat.com/scaling/projects/arbitrum}{L2Beat}}}
+   \caption*{\textit{State Validation is removed as a risk vector for users, graphic of Arbitrum's current stage 1 progress, from \href{https://l2beat.com/scaling/projects/arbitrum}{L2Beat}}}
 \end{wrapfigure} If a Rollup becomes native by relying on the enshrined EVM precompile, that state transition becomes canonical by definition, \textit{making the fraud proof infrastructure unnecessary.} 
 
 
@@ -866,7 +867,7 @@ In the Bankless interview with Uma and Justin, David does a great job \href{http
 
 \subparagraph{Native Rollups will be forward compatible with Ethereum Layer 1.} As the EVM changes, non-native rollups are required to keep pace with these changes in order to stay EVM equivalent, if that is their goal. By contrast, Native Rollups \textit{don't need to do this,} as the EVM precompile will be upgraded by Layer 1 Ethereum. 
 
-For more on Native Rollups, L2Beat put together a great resource on Native Rollups \href{https://native-rollups.l2beat.com/}{here.} This \href{https://medium.com/l2beat/native-rollups-where-they-are-and-where-they-are-going-cb21eb103d46}{article} titled \textit{"Native Rollups: Where they are, and where they are going"}, a collaboration between Donnoh.eth from L2Beat and \href{https://x.com/ConorMcMenamin9}{Conor McMenamin} from the \href{https://x.com/NethermindEth}{Nethermind} client team, does a fantastic job exploring where Native Rollups are today and the tradeoff space between throughput and composability for different Native Rollups that are looking to interoperate. Donnoh also gave a \href{https://youtu.be/0O3JyJpMQLQ?si=6sAghjK242mx0W1t}{talk} on Native Rollups at Token 2049 just a few weeks ago where he gives the background and highlights their fantastic benefits, including their potential for 10M aggregate TPS, verifiable on a smart watch! Justin Drake mentions \href{https://x.com/drakefjustin/status/1978435449489158312}{here} that zkEVMs will ultimately allow a 100x in Ethereum L1 scaling and that there will be an update on progress for proof generation at Devconnect in November 2025. 
+For more on Native Rollups, L2Beat put together a great resource on Native Rollups \href{https://native-rollups.l2beat.com/}{here.} This \href{https://medium.com/l2beat/native-rollups-where-they-are-and-where-they-are-going-cb21eb103d46}{article} titled \textit{"Native Rollups: Where they are, and where they are going"}, a collaboration between Donnoh.eth from L2Beat and \href{https://x.com/ConorMcMenamin9}{Conor McMenamin} from the \href{https://x.com/NethermindEth}{Nethermind} client team, does a fantastic job exploring where Native Rollups are today and the tradeoff space between throughput and composability for different Native Rollups that are looking to interoperate. Donnoh also gave a \href{https://youtu.be/0O3JyJpMQLQ?si=6sAghjK242mx0W1t}{talk} on Native Rollups at Token 2049 just a few weeks ago where he gives the background and highlights their fantastic benefits, including their potential for 10M aggregate TPS between L1 + L2s, verifiable on a smart watch! Justin Drake mentions \href{https://x.com/drakefjustin/status/1978435449489158312}{here} that zkEVMs will ultimately allow a 100x in Ethereum L1 scaling and that there will be an update on progress for proof generation at Devconnect in November 2025. 
 
 \subsection{\textbf{MEV, ETH Issuance, and Quantum Resistance}}
 
@@ -903,14 +904,14 @@ Let's start with outlining one of the centralizing forces Ethereum faces first, 
 \subsubsubsection{What is Maximum Extractable Value (MEV)?}
 \label{MEV}
 
-Maximum Extractable Value (MEV), formerly Miner Extractable Value in the days of Proof of Work, in a general sense is when some form of onchain value is available to be arbitraged, generally through a transaction ordering mechanism, by a sophisticated actor who is able to take advantage of a less sophisticated user that submitted a transaction. A really simple example in the Proof of Work days might have been if a user tries to execute an arbitrage trade that would net them \$1000, but a miner who became aware of that trade from the public mempool before it gets included in a block replaces that transaction with their own, taking the \$1000 reward for themselves. In this toy example, the miner was able to use their privileged knowledge of incoming order flow and put their transaction ahead of the user's. An early post from user pcmgoohan on \href{https://www.reddit.com/r/ethereum/comments/2d84yv/miners_frontrunning/}{reddit} describes this problem pretty well. \href{https://x.com/bertcmiller}{Bert Miller} from Flashbots wrote a very entertaining \href{https://x.com/bertcmiller/status/1402665992422047747}{series of posts} about MEV that is absolutely worth your time; he is known for popularizing the MEV landscape as the \href{https://bertcmiller.com/glimpse.html}{dark forest}. 
+Maximum Extractable Value (MEV), formerly Miner Extractable Value in the days of Proof of Work, in a general sense is when some form of onchain value is available to be arbitraged, generally through a transaction ordering mechanism, by a sophisticated actor who is able to take advantage of a less sophisticated user that submitted a transaction. A really simple example in the Proof of Work days might have been if a user tries to execute an arbitrage trade that would net them \$1000, but a miner who became aware of that trade from the public mempool before it gets included in a block replaces that transaction with their own, taking the \$1000 reward for themselves. In this toy example, the miner was able to use their privileged knowledge of incoming order flow and put their transaction ahead of the user's. An early post from user pcmgoohan on \href{https://www.reddit.com/r/ethereum/comments/2d84yv/miners_frontrunning/}{reddit} describes this problem well. \href{https://x.com/bertcmiller}{Bert Miller} from Flashbots wrote a very entertaining \href{https://x.com/bertcmiller/status/1402665992422047747}{series of posts} about MEV that is absolutely worth your time; he is known for popularizing the MEV landscape as the \href{https://bertcmiller.com/glimpse.html}{dark forest}. 
 
 \textbf{MEV is a centralizing force.} One way we know MEV is a specialized field and a centralizing force is that we can see a \href{https://en.wikipedia.org/wiki/Pareto_distribution}{Pareto Distribution} of the top MEV bots on Ethereum listed by total profit: \\
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{MEV pareto distribution.PNG}
-    \caption{\textit{A (not exhaustive) Distribution of MEV bot profits, data from \href{https://libmev.com/leaderboard}{libmev.com} by \href{https://x.com/crypticwoods_}{@cripticwoods\_}}}
+    \caption{\textit{A (not exhaustive) graphic Distribution of MEV bot profits I generated, data is from \href{https://libmev.com/leaderboard}{libmev.com} by \href{https://x.com/crypticwoods_}{@cripticwoods\_}}}
 \end{figure}
 
 The best performing MEV bots have an advantage over the competition; this advantage gives the highest performers the ability to go after even the tiniest profit opportunities with extremely slim profit margins, allowing them to capture opportunities that are not available to less performant MEV bots. These advantages then compound - creating the pareto distribution we see above. 
@@ -929,6 +930,8 @@ While MEV does have some positive impacts on the ecosystem - mainly around maint
 
 As I see it, minimizing MEV involves two components. The first is to \textbf{make the market for MEV as competitive as possible.} Making the MEV market more competitive means there are more actors earning MEV at a slower rate, which slows down the rate of centralization of sophisticated actors. \href{https://x.com/phildaian}{Phil Daian}, one of the authors of the Flashboys 2.0 paper mentioned earlier, went on to found \href{https://www.flashbots.net/}{Flashbots}, a company that has made it its mission to democratize MEV - or, put another way, make the market for MEV more accessible, increasing the number of competitive participants. 
 
+\clearpage
+
 \begin{comment}
 \begin{wrapfigure}{r}{0.5\textwidth}
   \begin{minipage}{0.45\textwidth}    % Slightly smaller than wrapfigure width to avoid overflow
@@ -946,16 +949,11 @@ As I see it, minimizing MEV involves two components. The first is to \textbf{mak
    \textit{An aside worth mentioning:} It's important to understand that today the validator set is responsible for two main functions. 
    
    \begin{enumerate}
-       \item \textbf{Block proposals:} This part is relatively easy to understand - validators build blocks locally by aggregating transactions from the public mempool, place them in order of transaction fee, and propose them to the network for inclusion. Alternatively, a validator can select a block that has been built for them by the specialized builder market and served to them through a \href{https://beaconcha.in/relays#t7d}{relay}, which has a much higher chance of maximizing their payout from execution layer rewards. \href{https://docs.flashbots.net/flashbots-mev-boost/introduction#:~:text=%E2%80%8B,from%20a%20marketplace%20of%20builders.}{MEV-Boost} serves as the infrastructure mechanism to establish this relationship. You can think of this as an out of protocol implementation of ``Proposer Builder Separation" - more on PBS in a bit. 
+       \item \textbf{Block proposals:} This part is relatively easy to understand - validators build blocks locally by aggregating transactions from the public mempool, place them in order of transaction fee, and propose them to the network for inclusion. Alternatively, a validator can select a block that has been built for them by the specialized builder market and served to them through a \href{https://beaconcha.in/relays#t7d}{relay}, which has a much higher chance of maximizing their payout from execution layer rewards. \href{https://docs.flashbots.net/flashbots-mev-boost/introduction#:~:text=%E2%80%8B,from%20a%20marketplace%20of%20builders.}{MEV-Boost} serves as the infrastructure mechanism to establish the relationship between validators and the block builders who compete in an auction. You can think of this as an out of protocol implementation of ``Proposer Builder Separation" - more on PBS in a bit. 
        \item \textbf{Attestations:} Attestations consist of two parts, one forward looking and one backward looking. The forward looking piece is responsible for selecting the next consensus block, aka ``the head of the chain", via the \href{https://eth2book.info/capella/part2/consensus/lmd_ghost/}{LMD-GHOST} fork choice rule. The backward looking piece finalizes blocks, forever cementing them into the chain at the risk of economic loss from a large portion (specifically, a minimum of 1/3rd) of the validator set. This is done via the  \href{https://eth2book.info/capella/part2/consensus/casper_ffg/}{Casper the Friendly Finality Gadget} mechanism. The combination of these two mechanisms form Ethereum's Proof of Stake consensus protocol. 
    \end{enumerate}
 
 \end{aside}
-
-\begin{wrapfigure}{r}{0.3\textwidth}
-   \includegraphics[width=0.3\textwidth]{insulating L1.PNG}
-   \caption*{\textit{\href{https://www.youtube.com/watch?v=OD54WfVuDWw}{Devconnect Amsterdam}, 2022}}
-\end{wrapfigure}
 
 The second component involves a realistic understanding that \textit{centralizing forces will always exist in markets.} In lieu of completely eliminating it, the key for Ethereum is to isolate the centralizing effects of MEV \textit{away from the set of attesters.} 
 
@@ -965,6 +963,11 @@ As \href{https://x.com/barnabemonnot}{Barnabe} describes in his post, Ethereum \
 
 The problem with this is that today, Ethereum validators \textit{are the sole entity with the right to include transactions and in which particular order to include them in} via the block proposal mechanism. Because optimizing economic value (and extraction) from a block is such a high skill endeavor (read: requires powerful hardware, proprietary algorithms, and requires capital), the block building market suffers from centralization. \href{https://www.youtube.com/watch?v=69IZIIsanvM}{In a talk at Devcon}, Jonah Burian says the centralizing effect of MEV is due to the monopoly proposers have (validators today) over the right to order and include transactions when proposing blocks. 
 
+\begin{wrapfigure}{r}{0.3\textwidth}
+   \includegraphics[width=0.3\textwidth]{insulating L1.PNG}
+   \caption*{\textit{\href{https://www.youtube.com/watch?v=OD54WfVuDWw}{Devconnect Amsterdam}, 2022}}
+\end{wrapfigure}
+
 Due to this high skill requirement, most validators sell their right to transaction ordering using \href{https://docs.flashbots.net/flashbots-mev-boost/introduction}{MEV-Boost}. MEV-Boost is an optional piece of software that runs in tandem with traditional Ethereum consensus and execution layer clients, called a sidecar. MEV-Boost was developed by Flashbots and it gives validators the ability to auction off their right to order transactions in a block to block builders who specialize in maximizing value extraction from blocks via optimal transaction ordering, in exchange for the higher rewards that come with the optimized transaction ordering. \href{https://x.com/nero_eth}{Toni} from the Ethereum Foundation has a \href{https://mevboost.pics/}{great dashboard} focused on MEV-Boost.  
 
 MEV-Boost greatly increases competition in the block building market; the reason for this is that block builders are willing to pay \textit{almost} all of their earnings to compete for the right to build the block. More competition means lower margins for builders, which has the effect of slowing centralization, relative to the world where MEV-Boost does not exist, a world where we would see an opaque, private order flow to a small subset of validators develop. 
@@ -972,7 +975,7 @@ MEV-Boost greatly increases competition in the block building market; the reason
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\linewidth]{MEVBoost share.PNG}
-    \caption{\textit{MEV-Boost share, by \href{https://x.com/Data_Always}{@Data\_Always}}}
+    \caption{\textit{MEV-Boost adoption share over time, by \href{https://x.com/Data_Always}{@Data\_Always}}}
 \end{figure}
 
 This \href{https://dune.com/dataalways/staking}{dashboard} on Dune by \href{https://x.com/Data_Always}{@Data\_Always} does a fantastic job illustrating graphically that about 90\% of validators use MEV-Boost to sell their transaction ordering rights - a clear indication that block builders who specialize in extracting value from optimizing transaction ordering inside blocks are far better at doing so than vanilla validators who build their blocks themselves. 
@@ -987,7 +990,7 @@ Although validators are both block proposers and attesters, what we really care 
 
 In this way, validators no longer have to compete in the competitive block building market, and can just collect \textit{most} of the MEV earnings without needing to have sophisticated software and hardware. Validators who sell these block building rights earn most of the MEV earnings, because block builders are competing with each other in an auction to pay validators more than other block builders. 
 
-MEV-Boost does a great job allowing block proposers to auction their block building rights to the block building market today, but it is extra-protocol and involves some trust assumptions between the proposer and the block builders. The next step is to enshrine this relationship into the core Ethereum protocol to make it trustless. \href{https://eips.ethereum.org/EIPS/eip-7732}{EIP-7732}, enshrined Proposer-Builder Separation, aims to do exactly this. 
+MEV-Boost does a great job allowing block proposers to auction their block building rights to the block building market today, but it is extra-protocol and involves some trust assumptions between the proposer and the block builders. The next step is to enshrine this relationship into the core Ethereum protocol to make it trustless. \href{https://eips.ethereum.org/EIPS/eip-7732}{EIP-7732}, enshrined Proposer-Builder Separation (ePBS), aims to do exactly this. ePBS is targeted for \href{https://forkcast.org/upgrade/glamsterdam}{Glamsterdam} in 2026. 
 
 So, if we can prevent centralization at the attester layer by breaking the functions of the MEV pipeline into its constituent parts \textbf{\textit{and insulating the attester set}} \textbf{\textit{away from the parts that centralize}}, then we can minimize the threat from MEV by preventing any actor from achieving undue influence over Ethereum consensus, which would result in losing its credible neutrality and/or censorship resistance.  
 
@@ -998,16 +1001,16 @@ By having the set of attesters sell their rights to propose blocks, this approac
 
 Now that we believe we can achieve the first two properties, the last piece we need is ensuring we can maintain censorship resistance even with a centralized block building market. Centralization of block builders is not as much a threat to Ethereum as centralization of the set of attesters \textit{as long as block builders cannot censor transactions}. 
 
-The mechanism for ensuring censorship resistance with a centralized builder market that benefits from economies of scale would work by \textit{holding this small set of centralized block builders accountable} in a crypto-economic sense if they don't include transactions. The primary effort around holding builders accountable involves the concept of \textbf{Inclusions Lists (ILs)} in this proposal called \href{https://ethresear.ch/t/fork-choice-enforced-inclusion-lists-focil-a-simple-committee-based-inclusion-list-proposal/19870}{FOCIL}, or Fork-Choice enforced Inclusion Lists, put forward by \href{https://x.com/soispoke}{soispoke}. Here is the \href{https://eips.ethereum.org/EIPS/eip-7805}{more formal EIP-7805} write up for FOCIL. 
-
-An IL would be a list of transactions constructed by a committee of randomly selected attesters that each submit a list of transactions from the their own view of the public mempool. These lists would then be aggregated together (repeated transactions eliminated), and then submitted to the builder for inclusion. The block produced by the builder then gets checked against this aggregated list by the committee of attesters. If the block resembles the IL above some canonically defined threshold, the block is considered valid. If the block does not resemble the IL enough, the block is not considered valid by the committee of attesters and it does not get included. The builder will have done the work but will miss out on their reward!
+The mechanism for ensuring censorship resistance with a centralized builder market that benefits from economies of scale would work by \textit{holding this small set of centralized block builders accountable} in a crypto-economic sense if they don't include transactions. The primary effort around holding builders accountable involves the concept of \textbf{Inclusions Lists (ILs)} in this proposal called \href{https://ethresear.ch/t/fork-choice-enforced-inclusion-lists-focil-a-simple-committee-based-inclusion-list-proposal/19870}{FOCIL}, or Fork-Choice enforced Inclusion Lists, put forward by \href{https://x.com/soispoke}{soispoke}. Here is the \href{https://eips.ethereum.org/EIPS/eip-7805}{more formal EIP-7805} write up for FOCIL; it is being \href{https://forkcast.org/upgrade/glamsterdam#eip-7805}{Considered For Inclusion} in Glamsterdam as of October 2025. 
 
 \begin{wrapfigure}{r}{0.5\textwidth}
    \includegraphics[width=0.5\textwidth]{focil effectiveness.PNG}
    \caption*{\textit{The IL Committee size \href{https://warpcast.com/soispoke/0xb2817f20}{doesn't have to be that big} to ensure censorship resistance}}
 \end{wrapfigure}
 
-According to soispoke, for an IL committee of size 16, statistically only about 15\% of the validator set need to be honest for transactions to be included within the same slot. In this simulation, FOCIL seems to be a fairly robust mechanism for ensuring censorship resistance. 
+An IL would be a list of transactions constructed by a committee of randomly selected attesters that each submit a list of transactions from the their own view of the public mempool. These lists would then be aggregated together (repeated transactions eliminated), and then submitted to the builder for inclusion. The block produced by the builder then gets checked by all attesters against this aggregated list by the committee of attesters. If the block resembles the IL above some canonically defined threshold, the block is considered valid. If the block does not resemble the IL enough, the block is not considered valid by the committee of attesters and it does not get included. The builder will have done the work but will miss out on their reward!
+
+As long as one of the IL committee participants is honest, block builders can be held accountable; this is a 1-of-N honesty assumption. According to soispoke, for an IL committee of size 16, statistically only about 15\% of the validator set need to be honest for transactions to be included within the same slot. In this simulation, FOCIL seems to be a fairly robust mechanism for ensuring censorship resistance. 
 
 One additional problem we have to solve is this - if we already sold block construction rights to block builders, how do we ensure a list of transactions from the public mempool are still included? The solution would be to allow builders flexibility around how the block is constructed, and as long as it is \textit{close enough} to the aggregated IL, the block is valid. What would likely happen, is the most valuable transactions would dominate the earliest part of the block to allow for close to optimum MEV extraction, and the later transactions in the block would more closely reflect the inclusion list. 
 
@@ -1032,7 +1035,7 @@ The combination of the above two building blocks would together aim to achieve o
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{mechanstein.jpeg}
+    \includegraphics[width=0.85\linewidth]{mechanstein.jpeg}
     \caption{\textit{A lot going on here, which is one of the drawbacks of ``Mechan-stein" that Mike highlights in his article}}
 \end{figure}
 
@@ -1048,18 +1051,14 @@ Although centralization of the block building market is \href{https://vitalik.et
 
 In today's MEV pipeline, block builders have built up trusted relationships with searchers who specialize in finding MEV opportunities onchain. These searchers send these opportunities, called orderflow, to the block builders they have built up these trusted relationships with. Searchers have to trust that block builders won't take these opportunities for themselves. The challenge with this is that these relationships are very unique to a small number of searchers and block builders; they're opaque and difficult for newcomers to compete with. 
 
-Remember, Flashbots' goal is to democratize these revenue streams by making them \textit{more transparent} to enable \textit{more competition.} BuilderNet's goal is to make these relationships obsolete by creating a network for builders to share orderflow from users, making orderflow a commodity. The question becomes, why would a successful block builder join BuilderNet, if they already enjoy exclusive orderflow from the searchers they have built relationships with? 
-
 \begin{wrapfigure}{r}{0.5\textwidth}
    \includegraphics[width=0.5\textwidth]{second price.png}
    \caption*{\textit{First versus Second Price Auctions}}
 \end{wrapfigure}
 
-The reason is because BuilderNet will \textit{attract orderflow from users}, increasing MEV opportunities fo block builders, by issuing  \href{https://buildernet.org/docs/refunds}{\textit{user refunds}}, enabled by a \href{https://www.youtube.com/watch?v=VUN-k_nfDts}{\textit{second price auction}} mechanism. Through this refund mechanism, BuilderNet will be the best place for users to go who want to land a transaction onchain. 
+Remember, Flashbots' goal is to democratize these revenue streams by making them \textit{more transparent} to enable \textit{more competition.} BuilderNet's goal is to make these relationships obsolete by creating a network for builders to share orderflow from users, making orderflow a commodity. The question becomes, why would a successful block builder join BuilderNet, if they already enjoy exclusive orderflow from the searchers they have built relationships with? \clearpage
 
-Second price auctions work by having the winner of a bid pay the amount of the second highest bid, which was by definition a lower amount than their bid, which was the highest. Second price auctions incentivize users to pay much closer to the true value for a transaction they want to land onchain. The refunds are distributed back to the users who generated the orderflow based on the MEV value they contributed to the block. 
-
-This refund mechanism will attract infrastructure providers (who want to attract users), allowing BuilderNet to create a network effect around attracting the most valuable orderflow. 
+The reason is because BuilderNet will \textit{attract orderflow from users}, increasing MEV opportunities for block builders, by issuing \href{https://buildernet.org/docs/refunds}{\textit{user refunds}}, enabled by a mechanism inspired by \href{https://www.youtube.com/watch?v=VUN-k_nfDts}{\textit{second price auctions}}. BuilderNet bids in the MEV-Boost auction less than the true value of the block, then refunds users proportional to the value they contributed to the block from their orderflow. Through this refund mechanism, BuilderNet will be the best place for users to go who want to land a transaction onchain. This refund mechanism will attract infrastructure providers (who want to attract users), allowing BuilderNet to create a network effect around attracting the most valuable orderflow. which will also attract block builders who want a piece of the orderflow. 
 
 As of now there are only 3 builders on BuilderNet, but Flashbots believes more builders will come as BuilderNet's network effect grows due to its superior access to user orderflow. BuilderNet has \href{https://buildernet.org/blog/beaverbuild}{attracted Beaver Build} to build blocks on BuilderNet, one of the most successful block builders on Ethereum. 
 
@@ -1080,40 +1079,39 @@ Let's first briefly go over how issuance in Ethereum works. Validators are paid 
 Ethereum incentivizes validators to perform their duties well by paying them in ETH, but also by slashing their staked deposit in the case of misbehavior. As more ETH is staked, each individual validator earns a lower annual percentage yield, but the total network issuance of new ETH increases. The relationship between a validator's expected APR and the total ETH staked on the network is an \href{https://notes.ethereum.org/@mikeneuder/subsol#1-Inverse-Root-Curve-current-issuance}{inverse square root curve}: 
 
 \begin{align}
-    APR = \frac{2.6*64}{\sqrt{total\ staked\ ETH}}
+    APR \approx \frac{2.6*64}{\sqrt{total\ staked\ ETH}}
 \end{align}
 
-An important concept is \textit{real yield}, which is the difference between the total issuance of the network and the expected yield for each validator. As an example, if each validator earned 2\% staking yield but the network issuance was 2\% per year, then the \textit{real yield would be zero.}
+An important concept is \textit{real yield}, which is the difference between the total issuance of the network and the expected yield for each validator. As an example, if each validator earned 2\% staking yield but the total network issuance was 2\% per year, then the \textit{real yield would be zero.}
 
 \href{https://x.com/casparschwa}{Caspar} does a good job illustrating this concept with the following graphic from his \href{https://ethresear.ch/t/endgame-staking-economics-a-case-for-targeting/18751}{ethresear.ch post}: 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\linewidth]{real yield.png}
-    \caption{\textit{As more ETH is staked, real yield (dashed green line) tends to near zero, even though nominal yield remains close to 2\%}}
+    \caption{\textit{As more ETH is staked, real yield (dashed green line) tends to near zero, even though nominal yield (gray line) remains close to 2\%}}
 \end{figure}
 
 Check out Ben Edgington's blog for a deep dive on how Ethereum's \href{https://eth2book.info/capella/part2/incentives/issuance/}{issuance} works and how \href{https://eth2book.info/capella/part2/incentives/rewards/}{rewards} for validators works. 
 
-As more ETH is staked, the network's aggregate issuance increases, which has the effect of increasing dilution for un-staked ETH holders. This \textit{increases the incentive} for un-staked ETH holders to stake their ETH \textit{just to avoid the effects of dilution.} With staked ETH ETFs \href{https://x.com/Grayscale/status/1975147923387363421}{coming online}, staking ETH is about to become even more frictionless. \href{https://x.com/JustDeauIt}{Mike Nadeau} wrote an \href{https://thedefireport.io/research/the-50-billion-cascade#impact-on-economic-security}{excellent article} discussing the impacts of staked ETH ETFs. As staking friction decreases, more ETH will be staked, further diluting un-staked ETH holders. What we have is a tragedy of the commons. 
+What exactly is the problem here? The problem comes down to the below elements: 
 
-One method of staking for Ethereum users is through Liquid Staking Tokens, such as stETH, 
+\subparagraph{Dilution Causes a Tragedy of the Commons} With staked ETH ETFs \href{https://x.com/Grayscale/status/1975147923387363421}{coming online}, staking ETH is about to become even more frictionless. \href{https://x.com/JustDeauIt}{Mike Nadeau} wrote an \href{https://thedefireport.io/research/the-50-billion-cascade#impact-on-economic-security}{excellent article} discussing the impacts of staked ETH ETFs. Liquid Staking Tokens and staked ETH ETFs allow holders to passively earn the staking yield. As staking friction falls, more ETH is staked, increasing the dilution for non-stakers; this creates a stronger incentive for them to stake just to avoid dilution. In a scenario where almost all ETH is staked due to this dynamic, ETH the asset would be suffering from 2\% dilution while stakers experience negative real yield, after accounting for taxes. 
 
-\href{https://youtu.be/m91Wu6-cdwk?si=pEZ6Y7L0K3Wq7ZQa}{Anders' talk}
+\subparagraph{Loss of ETH as Permissionless Money:} As more Liquid Staking Tokens (LST) are minted, an LST could potentially gain strong network effects around having more liquidity than un-staked ETH. This introduces systemic risk to the ecosystem, one that would not exist if ETH remains the dominant form of permissionless collateral in the ecosystem. \\
 
-- tragedy of the commons in the higher staking regime, as people will stake to avoid dilution, while still missing out on any real yield
-- one of the goals is that holding raw eth should be economically viable
-- why is high issuance centralizing?
-    - volatility of MEV rewards
-    - economies of scale
-- how do we target a specific stake participation ratio? (define this as well)
-- introduce dis-economies of scale, maybe a combination of this and targeted stake participation would work well in tandem
+\href{https://x.com/weboftrees}{Anders} did a good job \href{https://youtu.be/m91Wu6-cdwk?si=pEZ6Y7L0K3Wq7ZQa}{at Devcon} in November of 2024 discussing his ``\href{https://ethresear.ch/t/practical-endgame-on-issuance-policy/20747}{Practical Endgame for Issuance Policy}" and I am in favor of this approach. 
 
 \subsubsection{Making Ethereum Quantum Resistant}
+\label{Making Ethereum Quantum Resistant}
 
-\begin{aside}
-    \textit{A Note on Ethereum's Quantum Resistance:} Ethereum is also deeply considering hardening itself against quantum threats, but it is early enough in exploring this that it would be premature for me to dedicate a full section to it. 
-\end{aside}
+Ethereum is working towards hardening itself against quantum threats, but it is very early in exploring this research path, \textit{so this section will generalize and be very brief.} Probably the best resource to deep dive this topic is this inaugural \href{https://www.youtube.com/watch?v=g-PDKIAqw-A&list=PLJqWcTqh_zKGPctGzVOBllZnCPQj-g7d3}{post-quantum workshop}, a 3 day workshop specifically on Ethereum's quantum resistance roadmap that was just posted four days ago (as of writing). 
+
+Quantum resistant cryptography \href{https://en.wikipedia.org/wiki/Post-quantum_cryptography}{already exists} as a cryptographic primitive, but the challenge for Ethereum will again come back to the limitations of the speed of signature aggregation, just as in the section on \hyperref[Single Slot Finality]{Single Slot Finality.} Quantum-resistant signatures, were Ethereum to switch to them today, would introduce a 10x performance degradation to Ethereum's TPS. \href{https://youtu.be/g-PDKIAqw-A?si=uYvITr67sQnTHISe&t=887}{According to Justin Drake}, ``\textit{this is one of the last things we need to do to de-risk this direction}" (quantum resistance, my emphasis). 
+
+The most important takeaway here is that \textit{Ethereum is taking Quantum Computing very seriously and is planning for this eventuality.} 
+
+\clearpage
 
 \section{Endgame}
 
@@ -1123,11 +1121,15 @@ Ethereum boasts \href{https://ethereumuptime.org/}{100\% uptime} and will become
 
 \hyperref[PeerDAS]{Data Availability Sampling} will allow the network to load-share Layer 2 transaction data across the network, allowing scalability and decentralization to increase \textit{in tandem.}
 
-\hyperref[Validity Proofs]{\textbf{Validity Proofs}} and \hyperref[Stateless Verification]{\textbf{stateless verification}} will allow attesting to happen on very compute limited devices, even smart watches, while allowing the gas limit to increase 100 fold, to allow as much as 10k TPS on Ethereum layer 1. Validity proofs will also unlock \hyperref[Native Rollups]{Native Rollups}, decrease the risk surface and development timelines for rollups.
+\hyperref[Validity Proofs]{\textbf{Validity Proofs}} and \hyperref[Stateless Verification]{\textbf{stateless verification}} will allow attesting to happen on very compute limited devices, even smart watches, while allowing the gas limit to increase 100 fold, to allow as much as 10k TPS on Ethereum layer 1. Validity proofs will also unlock \hyperref[Native Rollups]{Native Rollups}, making rollups trustless and decreasing their development timelines.
 
-Ethereum is exploring post-quantum security
+Ethereum is expending serious effort towards \hyperref[Making Ethereum Quantum Resistant]{post-quantum security}. 
 
 All while Ethereum is the most incentive compatible public infrastructure for all participants, with an attester set that is more isolated from centralizing forces than on any other blockchain. 
+
+The result is that Ethereum's network effects are growing stronger by the day, and name brands are \href{https://ethereumadoption.com/built-on-ethereum?view=byDate}{building on Ethereum}. 
+
+The financial infrastructure of the world will be built on Ethereum. 
 
 \section{Resources}
 
@@ -1149,7 +1151,7 @@ All while Ethereum is the most incentive compatible public infrastructure for al
     \item \href{https://orderflow.art/}{Orderflow.art}, an interactive dashboard showing the lifecycle of transactions on Ethereum
     \item \href{https://app.rwa.xyz/}{RWA.xyz} - a beautiful dashboard tracking Real-World Assets hosted on the largest blockchains
     \item \href{https://www.ethismoney.xyz/}{ETH is Money} - an ETH is money dashboard
-    \item \href{https://leanroadmap.org/}{Lean Consensus R&D Roadmap} - A roadmap dashboard focused on Ethereum's Consensus layer
+    \item \href{https://leanroadmap.org/}{Lean Consensus R\&D Roadmap} - A roadmap dashboard focused on Ethereum's Consensus layer
     \item \href{https://ethroadmap.com/}{ETH Roadmap} - focused on Ethereum's roadmap as outlined by Vitalik's six research tracks, although now outdated
     \item \href{https://rollup.wtf/}{Rollup.wtf} A real time dashboard that displays TPS for the constellation of L2s
     
@@ -1167,7 +1169,7 @@ All while Ethereum is the most incentive compatible public infrastructure for al
     \item \href{https://ethresear.ch/}{ETH Research} - Ethereum's premier research forum
     \item \href{https://ethereum-magicians.org/}{ETH Magicians} - A less formal forum for discussing Ethereum's upcoming upgrades
     \item \href{https://eth2book.info/latest/}{Eth2Book} - Ben Edington's technical deep dive on Ethereum
-    \item \href{https://epf.wiki/#/}{EPF Wiki} - "a collection of technical resources about Ethereum", some really great stuff here
+    \item \href{https://epf.wiki/#/}{EPF Wiki} - ``a collection of technical resources about Ethereum", some really great stuff here
     \item \href{https://inevitableeth.com/}{Inevitable ETH .com} - Ethereum's wikipedia
     \item \href{https://ethereum.org/}{Ethereum.org} - An open source website that is an educational resource, funded by the Ethereum Foundation
     \item \href{https://vitalik.eth.limo/}{Vitalik's Website} - where he blogs about whatever he's interested in
@@ -1190,11 +1192,9 @@ All of the below splits contracts automatically split up funds on whichever netw
     \item 1\% of donated funds go to \href{https://x.com/0xSplits}{0xSplits} to help fund their team
 \end{itemize}
 
-The Protocol Guild is an independent funding organization that helps to fund the work of 190 open source Ethereum core developers. \\
+The Protocol Guild is an independent funding organization that helps to fund the work of $\approx$ 190 open source Ethereum core developers. \\
 
-This Splits contracts I made are immutable, meaning they can never change, so you know exactly where your donated money will go and you can verify that onchain. You can verify The Protocol Guild's donation addresses \href{https://protocol-guild.readthedocs.io/en/latest/03-donate.html}{here}. \\
-
-To donate to me, donate to any of the Splits addresses below: 
+The Splits contracts I made below are immutable, meaning they can never change, so you know exactly where your donated money will go and you can verify that onchain. You can verify The Protocol Guild's donation addresses \href{https://protocol-guild.readthedocs.io/en/latest/03-donate.html}{here}. \\
 
 \begin{itemize}
     \item \textbf{Ethereum:} \href{https://app.splits.org/accounts/0xC7560fCBf74585d4440EbCfcA5B807b46d0B59A0/?chainId=1}{0xC7560fCBf74585d4440EbCfcA5B807b46d0B59A0}
@@ -1202,59 +1202,5 @@ To donate to me, donate to any of the Splits addresses below:
     \item \textbf{Arbitrum:} \href{https://app.splits.org/accounts/0x7C64914Dd25e4bFC479D0ed9aB7A3046585c6c6f/?chainId=42161}{0x7C64914Dd25e4bFC479D0ed9aB7A3046585c6c6f}
     \item \textbf{Optimism's OP Mainnet:} \href{https://app.splits.org/accounts/0xcC2Fed4256C07e82fdbb4f3E3A413802A30F76Bb/?chainId=10}{0xcC2Fed4256C07e82fdbb4f3E3A413802A30F76Bb}
 \end{itemize}
-
-\section{Summary}
-
-In lieu of a conclusion, I'll summarize the paper in a one page document on the next page. At this point, hopefully you understand everything below. If you don't, feel free to reach out with some questions!
-
-One page summary is on the following page:
-
-Twitter \href{https://twitter.com/i/spaces/1OyKAjlLgdMGb}{space} on post-quantum cryptography
-
-Youtube series on \href{https://www.youtube.com/watch?v=7it17ANqdBE&list=PLJqWcTqh_zKGPctGzVOBllZnCPQj-g7d3&index=5}{Post Quantum Security}
-
-\clearpage
-
-\subsection*{One Pager:}
-
-\subsubsection*{Ethereum's Network Effects Are Strengthening:}
-
-\begin{itemize}
-    \item \textbf{Stablecoin Supply} on Ethereum \href{https://defillama.com/stablecoins/ethereum}{is up} 46.8\% in 2025 to \$160B; Bessent believes we may \href{https://x.com/SecScottBessent/status/1935027160374210573}{see \$3.7 Trillion onchain} by 2030
-    \item \textbf{Transactions Per Second} in the Ethereum ecosystem is on a \href{https://l2beat.com/scaling/activity}{strong uptrend}, up 5x since early 2024
-    \item \textbf{ETH as a Store of Value:} ETH DATs and ETFs \href{https://l2beat.com/scaling/activity}{have acquired} 7.8M Ether since the beginning of June
-\end{itemize}
-
-\subsubsection*{Ethereum's Goal}
-
-Ethereum's North Star is to be the Internet's most credibly neutral and censorship resistant financial layer, such that it becomes the global financial center of gravity. This is enabled by the following upgrades to Ethereum's three layers:
-
-\subsubsection*{Consensus Layer}
-
-\begin{itemize}
-    \item time to finality will decrease $\approx$ 32x, via \hyperref[Single Slot Finality]{Single Slot Finality}
-    \item \hyperref[Preconfirmations]{Preconfirmations} will create a fintech user experience on Ethereum, enabling almost instant transaction confirmations for users
-    \item increased resilience to Denial-of-Service attacks via \hyperref[Single Secret Leader Election]{Single Secret Leader Election}
-\end{itemize}
-
-\subsubsection*{Data Layer}
-
-\begin{itemize}
-    \item \hyperref[PeerDAS]{Data Availability Sampling} will allow the network to load-share Layer 2 transaction data across the network, linearly increasing scalability with each new Ethereum validator added to the network
-    \item transactions per second on Layer 2s will allow up to $\approx$ 10M over the next 3 - 5 years as the blob target increases from 6 to 128 per block
-    \item Based and Native Rollups note
-\end{itemize}
-
-\subsubsection*{Execution Layer}
-
-\begin{itemize}
-    \item Validity proofs will be constant time to verify block correctness, enabling a vastly increased block gas limit and 10k TPS on Ethereum Layer 1
-    \item stateless verification will reduce storage requirements, in combination with validity proofs, \textit{validating on smart watches will be possible}
-    \item native execution will enable trustless rollups, deprecation of governance vulnerabilities, and 
-\end{itemize}
-
-\subsubsection*{Entities building on Ethereum:}
-
-\href{https://www.youtube.com/live/FBHmAq5lmZQ?si=Fy8OwPsKn4S-HTef}{Robinhood} and \href{https://www.investing.com/news/company-news/etoro-expands-245-trading-plans-tokenized-stocks-on-ethereum-93CH-4157860#:~:text=The%20company%20also%20announced%20plans%20to%20launch%20U.S.%2Dlisted%20equities%20as%20ERC20%20tokens%20on%20the%20Ethereum%20blockchain}{eToro} are tokenizing stocks, Visa + PayPal, SWIFT is building on Linea, an Ethereum Layer 2. \href{https://www.coinbase.com/blog/Coinbase-and-JPMorgan-Chase-join-forces-to-make-it-even-easier-to-access-crypto}{JPMorgan + Coinbase}, 
 
 \end{document}
