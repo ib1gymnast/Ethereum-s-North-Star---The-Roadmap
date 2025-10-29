@@ -510,7 +510,7 @@ To achieve Stage 2, a Rollup must:
     \item \textbf{State validation:} If a faulty transaction was executed by the L2, anyone must be able to permissionlessly submit a fraud proof that a transaction executed by the L2 was faulty in order to revert the faulty transaction
     \item \textbf{Data Availability:} The rollup's transaction data must be posted on Ethereum L1 such that it is available for fraud proof construction
     \item \textbf{Self propose:} Anyone can permissionlessly become a block proposer to the L2 after a time period of inactivity from the whitelisted block proposers
-    \item \textbf{Exit Window:} There must be a long enough delay between when  an upgrade to the rollup is proposed and when the upgrade is implemented for users to exit back to the L1 permissionlessly. This way, if the upgrade is malicious, users have enough time to permissionlessly exit the rollup to avoid the malicious upgrade. This is generally accepted to be 30 days. As of October 2025, no rollup has an upgrade delay that meets 30 days. 
+    \item \textbf{Exit Window:} There must be a long enough delay between when  an upgrade to the rollup is proposed and when the upgrade is implemented for users to exit back to the L1 permissionlessly. This way, if the upgrade is malicious, users have enough time to permissionlessly exit the rollup to avoid the malicious upgrade. This is generally accepted to be 30 days. As of October 2025, there is one general-purpose rollup with an upgrade delay of at least 30 days: \href{https://l2beat.com/scaling/projects/facet}{Facet Bluebird}.
 \end{itemize}
 
 \begin{figure}[h]
